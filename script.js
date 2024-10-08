@@ -20,12 +20,12 @@ async function fetchWeather() {
 
             weatherDisplay.innerHTML = `
                 <strong>Weather in ${city}:</strong><br>
-                Temperature: ${temp}°C<br>
+                Temperature: ${temp}Â°C<br>
                 Humidity: ${humidity}%<br>
                 Description: ${description}
             `;
 
-            // Check for temperature alerts
+            
             checkTemperatureAlert(temp);
         } else {
             document.getElementById('weatherInfo').textContent = 'City not found. Please try again.';
@@ -36,18 +36,18 @@ async function fetchWeather() {
     }
 }
 
-// Optional: Temperature alert
+
 document.getElementById('setAlertBtn').addEventListener('click', setTemperatureAlert);
 let alertTemp = null;
 
 function setTemperatureAlert() {
     const tempAlert = document.getElementById('tempAlert').value;
     alertTemp = parseFloat(tempAlert);
-    alert(`Alert set for temperatures below ${alertTemp}°C.`);
+    alert(`Alert set for temperatures below ${alertTemp}Â°C.`);
 }
 
 function checkTemperatureAlert(currentTemp) {
     if (alertTemp !== null && currentTemp < alertTemp) {
-        alert(`Warning: The temperature is below ${alertTemp}°C!`);
+        alert(`Warning: The temperature is below ${alertTemp}Â°C!`);
     }
 }
