@@ -12,7 +12,7 @@ async function fetchWeather() {
         const data = await response.json();
         
         if (response.ok) {
-            // Update the weather display section
+          
             const weatherDisplay = document.getElementById('weatherInfo');
             const temp = data.main.temp;
             const humidity = data.main.humidity;
